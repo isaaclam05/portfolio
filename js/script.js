@@ -3,17 +3,13 @@
 ========================================== */
 
 const header =
-document.querySelector(
-    "header"
-);
+document.querySelector("header");
 
 window.addEventListener(
     "scroll",
     () => {
 
-        if (
-            window.scrollY > 50
-        ) {
+        if (window.scrollY > 50) {
 
             header.style.background =
             "rgba(7,11,20,0.92)";
@@ -29,13 +25,14 @@ window.addEventListener(
         else {
 
             header.style.background =
-            "rgba(7,11,20,0.75)";
+            "";
+
+            header.style.backdropFilter =
+            "";
 
             header.style.boxShadow =
-            "none";
-
+            "";
         }
-
     }
 );
 
@@ -60,6 +57,16 @@ document.querySelectorAll(
 `
 );
 
+/* Add animation class */
+
+revealElements.forEach(
+    element => {
+        element.classList.add(
+            "animate-on-scroll"
+        );
+    }
+);
+
 const observer =
 new IntersectionObserver(
 
@@ -75,18 +82,14 @@ new IntersectionObserver(
                     entry.target.classList.add(
                         "show-element"
                     );
-
                 }
-
             }
         );
-
     },
 
     {
         threshold:0.15
     }
-
 );
 
 revealElements.forEach(
@@ -101,7 +104,6 @@ revealElements.forEach(
         observer.observe(
             element
         );
-
     }
 );
 
@@ -141,16 +143,12 @@ cards.forEach(
 
                 const rotateX =
                 (
-                    (
-                        y -
-                        centerY
-                    ) / 18
+                    (y - centerY) / 18
                 ) * -1;
 
                 const rotateY =
                 (
-                    x -
-                    centerX
+                    x - centerX
                 ) / 18;
 
                 card.style.transform =
@@ -161,7 +159,6 @@ cards.forEach(
                 translateY(-12px)
                 scale(1.02)
                 `;
-
             }
         );
 
@@ -177,10 +174,8 @@ cards.forEach(
                 translateY(0px)
                 scale(1)
                 `;
-
             }
         );
-
     }
 );
 
@@ -189,30 +184,33 @@ cards.forEach(
    CURSOR GLOW EFFECT
 ========================================== */
 
-const glow =
-document.createElement(
-    "div"
-);
+if (window.innerWidth > 1100) {
 
-glow.className =
-"cursor-glow";
+    const glow =
+    document.createElement(
+        "div"
+    );
 
-document.body.appendChild(
-    glow
-);
+    glow.className =
+    "cursor-glow";
 
-document.addEventListener(
-    "mousemove",
-    e => {
+    document.body.appendChild(
+        glow
+    );
 
-        glow.style.left =
-        e.clientX + "px";
+    document.addEventListener(
+        "mousemove",
+        e => {
 
-        glow.style.top =
-        e.clientY + "px";
+            glow.style.left =
+            e.clientX + "px";
 
-    }
-);
+            glow.style.top =
+            e.clientY + "px";
+        }
+    );
+}
+
 
 /* ==========================================
    HERO PARALLAX EFFECT
@@ -227,9 +225,7 @@ document.addEventListener(
     "mousemove",
     e => {
 
-        if (
-            !heroCard
-        ) return;
+        if (!heroCard) return;
 
         const x =
         (
@@ -247,7 +243,6 @@ document.addEventListener(
         `
         translate(${x}px,${y}px)
         `;
-
     }
 );
 
@@ -287,7 +282,6 @@ window.addEventListener(
 
         progressBar.style.width =
         `${progress}%`;
-
     }
 );
 
@@ -305,14 +299,11 @@ window.addEventListener(
             ".hero-left"
         );
 
-        if (
-            heroText
-        ) {
+        if (heroText) {
 
             heroText.animate(
 
                 [
-
                     {
                         opacity:0,
                         transform:
@@ -324,7 +315,6 @@ window.addEventListener(
                         transform:
                         "translateY(0)"
                     }
-
                 ],
 
                 {
@@ -332,11 +322,8 @@ window.addEventListener(
                     easing:
                     "ease-out"
                 }
-
             );
-
         }
-
     }
 );
 
@@ -358,47 +345,81 @@ document.getElementById(
     "mobileThemeToggle"
 );
 
-function toggleTheme(){
+/* Load saved theme */
 
-    body.classList.toggle(
+if (
+    localStorage.getItem(
+        "theme"
+    ) === "light"
+) {
+
+    body.classList.add(
         "light-theme"
     );
+}
+
+function updateThemeUI() {
 
     const isLight =
     body.classList.contains(
         "light-theme"
     );
 
-    themeToggle.innerHTML =
-    isLight
-    ? "☀️"
-    : "🌙";
+    if (themeToggle) {
 
-    if(mobileThemeToggle){
+        themeToggle.textContent =
+        isLight
+        ? "☀️"
+        : "🌙";
+    }
 
-        mobileThemeToggle.innerHTML =
+    if (
+        mobileThemeToggle
+    ) {
+
+        mobileThemeToggle.textContent =
         isLight
         ? "☀️ Dark / Light Mode"
         : "🌙 Dark / Light Mode";
     }
 }
 
+function toggleTheme() {
+
+    body.classList.toggle(
+        "light-theme"
+    );
+
+    localStorage.setItem(
+
+        "theme",
+
+        body.classList.contains(
+            "light-theme"
+        )
+        ? "light"
+        : "dark"
+    );
+
+    updateThemeUI();
+}
+
+updateThemeUI();
+
 /* Desktop button */
 
-themeToggle.addEventListener(
+themeToggle?.addEventListener(
     "click",
     toggleTheme
 );
 
 /* Mobile button */
 
-if(mobileThemeToggle){
+mobileThemeToggle?.addEventListener(
+    "click",
+    toggleTheme
+);
 
-    mobileThemeToggle.addEventListener(
-        "click",
-        toggleTheme
-    );
-}
 
 /* ==========================================
    HAMBURGER MENU
@@ -425,37 +446,5 @@ hamburger?.addEventListener(
         mobileMenu.classList.toggle(
             "active"
         );
-    }
-);
-
-/* ==========================================
-   MOBILE THEME BUTTON
-========================================== */
-
-const mobileThemeToggle =
-document.getElementById(
-    "mobileThemeToggle"
-);
-
-mobileThemeToggle?.addEventListener(
-    "click",
-    () => {
-
-        document.body.classList.toggle(
-            "light-theme"
-        );
-
-        const isLight =
-        document.body.classList.contains(
-            "light-theme"
-        );
-
-        themeToggle.textContent =
-        isLight ? "☀️" : "🌙";
-
-        mobileThemeToggle.textContent =
-        isLight
-        ? "☀️ Dark / Light Mode"
-        : "🌙 Dark / Light Mode";
     }
 );

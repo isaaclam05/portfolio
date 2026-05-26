@@ -1490,6 +1490,7 @@ footer{
    REVEAL ANIMATION
 ========================================== */
 
+/* Default visible */
 .hero,
 .preview-section,
 .contact-section,
@@ -1500,22 +1501,22 @@ footer{
 .contact-info,
 .contact-form-card{
 
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* Only animate when JS adds class */
+.animate-on-scroll{
     opacity:0;
-
-    transform:
-    translateY(40px);
-
+    transform:translateY(40px);
     transition:
     opacity .9s ease,
     transform .9s ease;
 }
 
 .show-element{
-
     opacity:1 !important;
-
-    transform:
-    translateY(0) !important;
+    transform:translateY(0) !important;
 }
 
 /* ==========================================
@@ -1689,7 +1690,7 @@ footer{
 
     /* Show hamburger */
     .hamburger{
-        display:flex !important;
+        display:flex;
         flex-direction:column;
         justify-content:center;
         align-items:center;
@@ -1698,8 +1699,8 @@ footer{
         width:50px;
         height:50px;
 
-        border:none;
         background:transparent;
+        border:none;
         cursor:pointer;
     }
 
@@ -1728,7 +1729,7 @@ footer{
         translate(5px,-5px);
     }
 
-    /* Mobile dropdown */
+    /* Mobile Menu */
     .mobile-menu{
 
         position:fixed;
@@ -1740,36 +1741,44 @@ footer{
 
         padding:25px;
 
-        display:flex;
+        background:
+        rgba(6,8,22,0.98);
+
+        backdrop-filter:
+        blur(20px);
+
         flex-direction:column;
+
         gap:18px;
 
-        background:rgba(6,8,22,0.98);
-
-        backdrop-filter:blur(20px);
-
-        transform:
-        translateY(-20px);
+        z-index:99999;
 
         opacity:0;
         visibility:hidden;
 
+        transform:
+        translateY(-20px);
+
         transition:
         all .35s ease;
 
-        z-index:99999;
+        display:flex;
+    }
+
+    /* Open menu */
+    .mobile-menu.active{
+
+        opacity:1;
+        visibility:visible;
+
+        transform:
+        translateY(0);
     }
 
     /* Light mode */
     body.light-theme .mobile-menu{
         background:
         rgba(255,255,255,0.98);
-    }
-
-    .mobile-menu.active{
-        opacity:1;
-        visibility:visible;
-        transform:translateY(0);
     }
 
     .mobile-menu a{
@@ -1779,9 +1788,11 @@ footer{
         color:var(--text);
 
         font-size:18px;
+
         font-weight:500;
     }
 
+    /* Mobile Theme Button */
     .mobile-theme-toggle{
 
         margin-top:10px;
