@@ -399,3 +399,63 @@ if(mobileThemeToggle){
         toggleTheme
     );
 }
+
+/* ==========================================
+   HAMBURGER MENU
+========================================== */
+
+const hamburger =
+document.getElementById(
+    "hamburger"
+);
+
+const mobileMenu =
+document.getElementById(
+    "mobileMenu"
+);
+
+hamburger?.addEventListener(
+    "click",
+    () => {
+
+        hamburger.classList.toggle(
+            "active"
+        );
+
+        mobileMenu.classList.toggle(
+            "active"
+        );
+    }
+);
+
+/* ==========================================
+   MOBILE THEME BUTTON
+========================================== */
+
+const mobileThemeToggle =
+document.getElementById(
+    "mobileThemeToggle"
+);
+
+mobileThemeToggle?.addEventListener(
+    "click",
+    () => {
+
+        document.body.classList.toggle(
+            "light-theme"
+        );
+
+        const isLight =
+        document.body.classList.contains(
+            "light-theme"
+        );
+
+        themeToggle.textContent =
+        isLight ? "☀️" : "🌙";
+
+        mobileThemeToggle.textContent =
+        isLight
+        ? "☀️ Dark / Light Mode"
+        : "🌙 Dark / Light Mode";
+    }
+);
