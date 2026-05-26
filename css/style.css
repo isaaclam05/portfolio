@@ -1615,3 +1615,55 @@ footer{
         display:none;
     }
 }
+
+/* ==========================================
+   MOBILE THEME TOGGLE
+========================================== */
+
+.mobile-theme-toggle{
+
+    border:none;
+
+    background:
+    rgba(
+        255,
+        255,
+        255,
+        0.08
+    );
+
+    color:
+    var(--text);
+
+    padding:
+    14px 22px;
+
+    border-radius:16px;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    border:
+    1px solid
+    var(--border);
+
+    transition:
+    .3s ease;
+}
+
+.mobile-theme-toggle:hover{
+
+    transform:
+    translateY(-2px);
+
+    background:
+    rgba(
+        255,
+        255,
+        255,
+        0.12
+    );
+}

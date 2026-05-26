@@ -345,74 +345,57 @@ window.addEventListener(
    THEME TOGGLE
 ========================================== */
 
+const body =
+document.body;
+
 const themeToggle =
 document.getElementById(
     "themeToggle"
 );
 
-/* Apply saved theme */
-
-const savedTheme =
-localStorage.getItem(
-    "theme"
+const mobileThemeToggle =
+document.getElementById(
+    "mobileThemeToggle"
 );
 
-if(savedTheme === "light"){
+function toggleTheme(){
 
-    document.body.classList.add(
+    body.classList.toggle(
         "light-theme"
     );
 
-    themeToggle.textContent =
-    "☀️";
-
-}
-else{
-
-    document.body.classList.remove(
+    const isLight =
+    body.classList.contains(
         "light-theme"
     );
 
-    themeToggle.textContent =
-    "🌙";
+    themeToggle.innerHTML =
+    isLight
+    ? "☀️"
+    : "🌙";
+
+    if(mobileThemeToggle){
+
+        mobileThemeToggle.innerHTML =
+        isLight
+        ? "☀️ Dark / Light Mode"
+        : "🌙 Dark / Light Mode";
+    }
 }
 
-/* Change theme ONLY on click */
+/* Desktop button */
 
 themeToggle.addEventListener(
     "click",
-    () => {
-
-        document.body.classList.toggle(
-            "light-theme"
-        );
-
-        if(
-            document.body.classList.contains(
-                "light-theme"
-            )
-        ){
-
-            themeToggle.textContent =
-            "☀️";
-
-            localStorage.setItem(
-                "theme",
-                "light"
-            );
-
-        }
-        else{
-
-            themeToggle.textContent =
-            "🌙";
-
-            localStorage.setItem(
-                "theme",
-                "dark"
-            );
-
-        }
-
-    }
+    toggleTheme
 );
+
+/* Mobile button */
+
+if(mobileThemeToggle){
+
+    mobileThemeToggle.addEventListener(
+        "click",
+        toggleTheme
+    );
+}

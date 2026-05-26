@@ -37,68 +37,125 @@
 
     <!-- Header -->
 
-    <header>
+<header>
 
-        <nav class="navbar">
+    <nav class="navbar">
 
-            <div class="logo">
-                IKH
+        <div class="logo">
+            IKH
+        </div>
+
+        <!-- DESKTOP NAV -->
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="projects.html">
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="events.html">
+                    Events
+                </a>
+            </li>
+
+            <li>
+                <a href="education.html">
+                    Education
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+        <div class="nav-right">
+
+            <!-- HAMBURGER -->
+
+            <div
+                class="hamburger"
+                id="hamburger"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
 
-            <ul class="nav-links">
+            <!-- DESKTOP THEME -->
 
-                <li>
-                    <a href="index.html">
-                        Home
-                    </a>
-                </li>
+            <button
+                id="themeToggle"
+                class="theme-toggle"
+            >
+                🌙
+            </button>
 
-                <li>
-                    <a href="about.html">
-                        About
-                    </a>
-                </li>
+        </div>
 
-                <li>
-                    <a href="projects.html">
-                        Projects
-                    </a>
-                </li>
+    </nav>
 
-                <li>
-                    <a href="events.html">
-                        Events
-                    </a>
-                </li>
+    <!-- MOBILE MENU -->
 
-                <li>
-                    <a href="education.html">
-                        Education
-                    </a>
-                </li>
+    <div
+        class="mobile-menu"
+        id="mobileMenu"
+    >
 
-                <li>
-                    <a href="contact.html">
-                        Contact
-                    </a>
-                </li>
+        <a href="index.html">
+            Home
+        </a>
 
-            </ul>
+        <a href="about.html">
+            About
+        </a>
 
-            <div class="nav-right">
+        <a href="projects.html">
+            Projects
+        </a>
 
-                <button
-                    id="themeToggle"
-                    class="theme-toggle"
-                >
-                    🌙
-                </button>
+        <a href="events.html">
+            Events
+        </a>
 
-            </div>
+        <a href="education.html">
+            Education
+        </a>
 
-        </nav>
+        <a href="contact.html">
+            Contact
+        </a>
 
-    </header>
+        <!-- MOBILE THEME BUTTON -->
+
+        <button
+            id="mobileThemeToggle"
+            class="mobile-theme-toggle"
+        >
+            🌙 Dark / Light Mode
+        </button>
+
+    </div>
+
+</header>
 
     <!-- HERO -->
 
@@ -333,7 +390,7 @@
             <div class="project-card">
 
                 <img
-                    src="assets/evolearn.png"
+                    src="assets/Evolearn.png"
                     alt="EvoLearn"
                 >
 
