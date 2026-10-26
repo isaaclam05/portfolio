@@ -8,14 +8,14 @@ I'm Isaac Lam, a Financial Technology student at Republic Polytechnic with hands
 
 | Page | Content |
 | --- | --- |
-| `index.html` | Introduction, featured work and quick access to my résumé |
+| `index.html` | Introduction, featured work and quick access to my resume |
 | `about.html` | Background and interests |
 | `projects.html` | Selected work and contributions |
 | `project-detail.html` | Detailed website support case study |
 | `experience.html` | Professional experience and interactive timeline |
 | `skills.html` | Technical skills and interactive skills explorer |
 | `education.html` | Education, qualifications and awards |
-| `contact.html` | Contact details, LinkedIn and résumé access |
+| `contact.html` | Contact details, LinkedIn and resume access |
 
 ## Features
 
