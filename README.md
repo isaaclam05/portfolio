@@ -8,14 +8,14 @@ I'm Isaac Lam, a Financial Technology student at Republic Polytechnic with hands
 
 | Page | Content |
 | --- | --- |
-| `index.html` | Introduction, featured work and quick access to my résumé |
+| `index.html` | Introduction, featured work and quick access to my resume |
 | `about.html` | Background and interests |
 | `projects.html` | Selected work and contributions |
 | `project-detail.html` | Detailed website support case study |
 | `experience.html` | Professional experience and interactive timeline |
 | `skills.html` | Technical skills and interactive skills explorer |
 | `education.html` | Education, qualifications and awards |
-| `contact.html` | Contact details, LinkedIn and résumé access |
+| `contact.html` | Contact details, LinkedIn and resume access |
 
 ## Features
 
@@ -24,12 +24,12 @@ I'm Isaac Lam, a Financial Technology student at Republic Polytechnic with hands
 - **Interactive navigation:** Fixed desktop navigation and a mobile menu.
 - **Subtle motion:** Background effects, scroll reveals, project-card interactions and shine-through button effects. Buttons remain stationary on hover.
 - **Accessibility considerations:** Keyboard navigation, visible focus styles and support for reduced-motion preferences.
-- **Résumé access:** A downloadable PDF résumé.
+- **Resume access:** A downloadable PDF resume.
 - **No build step:** HTML, CSS and JavaScript are included directly in the page files.
 
 ## Built With
 
-- HTML5
+- HTML
 - CSS3
 - JavaScript
 
