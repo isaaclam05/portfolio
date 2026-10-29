@@ -36,3 +36,10 @@ Open `index.html` in a browser to preview; deploy all files together to GitHub P
 
 ## Photo gallery update
 Click any activity image to view it enlarged within the screen, with a caption below. Navigate using the arrows, left/right keyboard keys or touch swipe. Close with Escape, the X, or the dark backdrop. The three correct RP Open House photos are included. Event dates remain provisional pending the supplied timeline.
+
+
+## October 2026 update
+Added Student Overseas Trip (Guangzhou & Shenzhen, China) to the Experience page under a dedicated Overseas Learning & Industry Exposure section. Includes three supplied photos and captions in the existing lightbox. Trip date shown as 2026 pending confirmed dates.
+
+## Korea Student Overseas Trip (September 2026)
+Added Seoul SOT (13–18 September 2026) immediately above China SOT, with three supplied photos. The programme is described based on the user-supplied trip announcement; individual project outcomes are not asserted.
