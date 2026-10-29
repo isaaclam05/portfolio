@@ -1,65 +1,27 @@
-# Isaac Lam | Personal Portfolio
+# Isaac Lam — Personal Portfolio
 
-A responsive, eight-page portfolio showcasing my background in Financial Technology, practical IT experience, technical skills, education and selected work.
-
-I'm Isaac Lam, a Financial Technology student at Republic Polytechnic with hands-on experience in IT consulting, website maintenance, technical troubleshooting and client support.
+Professional portfolio for Financial Technology, software/IT and business/data roles.
 
 ## Pages
+- `index.html` — Home
+- `about.html` — About
+- `projects.html` — Work and projects
+- `regflow.html` — RegFlow project
+- `lahway.html` — LahWay project
+- `project-detail.html` — Original project-detail page
+- `experience.html` — Experience
+- `skills.html` — Skills
+- `education.html` — Education
+- `contact.html` — Contact
 
-| Page | Content |
-| --- | --- |
-| `index.html` | Introduction, featured work and quick access to my resume |
-| `about.html` | Background and interests |
-| `projects.html` | Selected work and contributions |
-| `project-detail.html` | Detailed website support case study |
-| `experience.html` | Professional experience and interactive timeline |
-| `skills.html` | Technical skills and interactive skills explorer |
-| `education.html` | Education, qualifications and awards |
-| `contact.html` | Contact details, LinkedIn and resume access |
+## Project screenshots
+The Work page uses static real-site thumbnails. RegFlow and LahWay project pages each include an automatic three-image gallery (5 seconds) with previous/next buttons, slide dots, pause/play, touch swipes, hover/focus pause, and reduced-motion handling. Screenshots are in `assets/`.
 
-## Features
+## Resume
+`assets/isaac-lam-resume.pdf` is the exact user-supplied current PDF (Resume(5)); all website labels use “resume”. The PDF itself has not been edited.
 
-- **Responsive layout:** Designed for desktop, tablet and mobile screens.
-- **Light and dark themes:** Obsidian Black & Silver styling with a saved theme preference.
-- **Interactive navigation:** Fixed desktop navigation and a mobile menu.
-- **Subtle motion:** Background effects, scroll reveals, project-card interactions and shine-through button effects. Buttons remain stationary on hover.
-- **Accessibility considerations:** Keyboard navigation, visible focus styles and support for reduced-motion preferences.
-- **Resume access:** A downloadable PDF resume.
-- **No build step:** HTML, CSS and JavaScript are included directly in the page files.
+## Publish
+Upload the files and `assets/` directory to the repository root for GitHub Pages. Do not upload `.git/` from an extracted local repository ZIP.
 
-## Built With
-
-- HTML
-- CSS3
-- JavaScript
-
-No frontend framework or external JavaScript library is required.
-
-
-## Project Structure
-
-```text
-portfolio/
-├── index.html
-├── about.html
-├── projects.html
-├── project-detail.html
-├── experience.html
-├── skills.html
-├── education.html
-├── contact.html
-├── assets/
-│   ├── favicon.svg
-│   ├── isaac-portrait.png
-│   └── isaac-lam-resume.pdf
-└── README.md
-```
-
-## Contact
-
-- **LinkedIn:** [Isaac Lam](https://www.linkedin.com/in/isaac-lam-khai-hang/)
-- **Email:** [isaaclam05@gmail.com](mailto:isaaclam05@gmail.com)
-
----
-
-© 2026 Isaac Lam. Personal Portfolio.
+## Important
+RegFlow is an AI-assisted academic prototype. Any ACRA, Singpass, MAS or screening statuses shown in project screenshots are demonstration interfaces, not proof of live authorised integrations or regulatory compliance.
