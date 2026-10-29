@@ -619,9 +619,7 @@ header.is-scrolled{box-shadow:0 12px 35px rgba(10,14,18,.18);border-bottom:1px s
 .desktop-nav a{position:relative}
 .desktop-nav a:after{content:"";position:absolute;bottom:-7px;left:0;width:100%;height:2px;background:var(--motion-silver);transform:scaleX(0);transform-origin:left;transition:transform .32s var(--motion-ease)}
 .desktop-nav a:hover:after,.desktop-nav a:focus-visible:after,.desktop-nav a[aria-current=page]:after{transform:scaleX(1)}
-/* Cursor glow uses pointer events none and appears only for hover-capable devices */
-.motion-spotlight{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:0;background:radial-gradient(430px circle at var(--pointer-x,50%) var(--pointer-y,40%),rgba(155,176,197,.15),transparent 68%);transition:opacity .4s ease}
-body.pointer-active .motion-spotlight{opacity:1}
+
 body>header,body>main,body>footer{position:relative;z-index:3}
 body>header{z-index:50}
 /* Timeline scroll progress, stronger activated milestones */
@@ -996,7 +994,13 @@ html[data-theme="dark"] .motion-silver-beam{opacity:.648!important}
 
 </style>
 <link href="assets/favicon.svg" rel="icon" type="image/svg+xml"/>
-</head>
+<style>
+.graduation-highlight{margin:1.5rem 0 0;max-width:100%;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--surface)}
+.graduation-highlight img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain;background:#0b0d10}
+.graduation-highlight figcaption{padding:1.1rem 1.25rem;display:grid;gap:.4rem;font-size:.9rem;line-height:1.65;color:var(--muted)}
+.graduation-highlight figcaption strong{color:var(--ink);font-size:1rem}
+@media(max-width:600px){.graduation-highlight figcaption{padding:1rem}}
+</style><style>.motion-spotlight{display:none!important}body.pointer-active .motion-spotlight{display:none!important}</style></head>
 <body class="page-education">
 <a class="skip-link" href="#main">Skip to main content</a>
 <div aria-hidden="true" class="ambient-scene">
@@ -1021,10 +1025,9 @@ html[data-theme="dark"] .motion-silver-beam{opacity:.648!important}
 <main id="main">
 <section class="page-top"><div class="container"><span class="eyebrow">06 / Education</span><h1>Building the foundations<br/><span class="accent">for what's next.</span></h1><p>My education brings together application development and a growing understanding of financial technology.</p></div></section><section class="section"><div class="container two-col"><div class="timeline">
 <div class="entry reveal"><div class="date">Apr 2025 — Apr 2028</div><h3>Diploma in Financial Technology</h3><div class="role">Republic Polytechnic</div><p>Developing foundations across financial services, technology, data and digital systems.</p></div>
-<div class="entry reveal"><div class="date">Jan 2022 — Dec 2024</div><h3>IT Application Development</h3><div class="role">ITE College Central</div><p>Built practical foundations in software and application development.</p></div>
+<div class="entry reveal"><div class="date">Jan 2022 — Dec 2024</div><h3>IT Application Development</h3><div class="role">ITE College Central</div><p>Built practical foundations in software and application development.</p><figure class="graduation-highlight reveal"><img alt="ITE College Central graduation ceremony, receiving a graduation certificate on stage" height="1024" loading="lazy" src="assets/ite-graduation.jpeg" width="1536"/><figcaption><strong>ITE Graduation</strong><span>Completing my IT Application Development studies was an important milestone, providing the technical foundation I continue to build on in Financial Technology.</span></figcaption></figure></div>
 <div class="entry reveal"><div class="date">Jan 2018 — Dec 2021</div><h3>Secondary Education</h3><div class="role">Unity Secondary School</div></div>
 </div><aside class="detail-box"><h3>Recognition</h3><p>Edusave EAGLES Award</p><p>Edusave Good Progress Award</p><p>Character and Values Excellence recognition</p><p>NCC Appreciation Award</p><p class="note">School awards received during 2020–2021.</p><h3 style="margin-top:28px">Languages</h3><p>English · Mandarin · Cantonese</p></aside></div></section>
-
 <section aria-labelledby="campus-title" class="section" id="campus-involvement">
 <div class="container">
 <span class="eyebrow">Beyond the classroom / Republic Polytechnic</span>
@@ -1178,14 +1181,7 @@ html[data-theme="dark"] .motion-silver-beam{opacity:.648!important}
  }
  // Pointer tracking is limited to mouse/trackpad, throttled to one frame.
  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches && !reduced.matches){
-  const glow=document.createElement('div');glow.className='motion-spotlight';glow.setAttribute('aria-hidden','true');body.appendChild(glow);
-  let pending=false,x=0,y=0;
-  document.addEventListener('pointermove',e=>{
-   x=e.clientX;y=e.clientY;
-   if(pending)return;pending=true;
-   requestAnimationFrame(()=>{glow.style.setProperty('--pointer-x',`${x}px`);glow.style.setProperty('--pointer-y',`${y}px`);body.classList.add('pointer-active');pending=false});
-  },{passive:true});
-  document.addEventListener('pointerleave',()=>body.classList.remove('pointer-active'));
+
   document.querySelectorAll('.project').forEach(card=>{
    card.addEventListener('pointermove',e=>{
     const r=card.getBoundingClientRect();

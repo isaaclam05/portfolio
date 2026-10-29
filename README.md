@@ -25,3 +25,14 @@ Upload the files and `assets/` directory to the repository root for GitHub Pages
 
 ## Important
 RegFlow is an AI-assisted academic prototype. Any ACRA, Singpass, MAS or screening statuses shown in project screenshots are demonstration interfaces, not proof of live authorised integrations or regulatory compliance.
+
+
+## 2026 Activity Photo Gallery
+
+The Experience page includes 8 activity sections and 24 original event photographs, compressed to WebP for faster loading. The gallery has a keyboard-accessible photo viewer (Escape closes), descriptive captions, and responsive layouts. RISE Awards duties: registration, ushering, crowd management; no backstage role claimed.
+
+Open `index.html` in a browser to preview; deploy all files together to GitHub Pages. Keep the `assets` folder intact. The site is static; contact actions open email or external profiles.
+
+
+## Photo gallery update
+Click any activity image to view it enlarged within the screen, with a caption below. Navigate using the arrows, left/right keyboard keys or touch swipe. Close with Escape, the X, or the dark backdrop. The three correct RP Open House photos are included. Event dates remain provisional pending the supplied timeline.

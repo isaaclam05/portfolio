@@ -619,9 +619,7 @@ header.is-scrolled{box-shadow:0 12px 35px rgba(10,14,18,.18);border-bottom:1px s
 .desktop-nav a{position:relative}
 .desktop-nav a:after{content:"";position:absolute;bottom:-7px;left:0;width:100%;height:2px;background:var(--motion-silver);transform:scaleX(0);transform-origin:left;transition:transform .32s var(--motion-ease)}
 .desktop-nav a:hover:after,.desktop-nav a:focus-visible:after,.desktop-nav a[aria-current=page]:after{transform:scaleX(1)}
-/* Cursor glow uses pointer events none and appears only for hover-capable devices */
-.motion-spotlight{position:fixed;inset:0;z-index:2;pointer-events:none;opacity:0;background:radial-gradient(430px circle at var(--pointer-x,50%) var(--pointer-y,40%),rgba(155,176,197,.15),transparent 68%);transition:opacity .4s ease}
-body.pointer-active .motion-spotlight{opacity:1}
+
 body>header,body>main,body>footer{position:relative;z-index:3}
 body>header{z-index:50}
 /* Timeline scroll progress, stronger activated milestones */
@@ -996,7 +994,7 @@ html[data-theme="dark"] .motion-silver-beam{opacity:.648!important}
 
 </style>
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-</head>
+<style>.motion-spotlight{display:none!important}body.pointer-active .motion-spotlight{display:none!important}</style></head>
 <body class="page-case-study">
 <a class="skip-link" href="#main">Skip to main content</a>
   <div class="ambient-scene" aria-hidden="true">
@@ -1139,14 +1137,7 @@ html[data-theme="dark"] .motion-silver-beam{opacity:.648!important}
  }
  // Pointer tracking is limited to mouse/trackpad, throttled to one frame.
  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches && !reduced.matches){
-  const glow=document.createElement('div');glow.className='motion-spotlight';glow.setAttribute('aria-hidden','true');body.appendChild(glow);
-  let pending=false,x=0,y=0;
-  document.addEventListener('pointermove',e=>{
-   x=e.clientX;y=e.clientY;
-   if(pending)return;pending=true;
-   requestAnimationFrame(()=>{glow.style.setProperty('--pointer-x',`${x}px`);glow.style.setProperty('--pointer-y',`${y}px`);body.classList.add('pointer-active');pending=false});
-  },{passive:true});
-  document.addEventListener('pointerleave',()=>body.classList.remove('pointer-active'));
+
   document.querySelectorAll('.project').forEach(card=>{
    card.addEventListener('pointermove',e=>{
     const r=card.getBoundingClientRect();
